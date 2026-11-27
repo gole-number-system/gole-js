@@ -12,7 +12,7 @@ The padding rules come from [`@gole-number-system/gole-core`](https://github.com
 npm install @gole-number-system/angular-gole
 ```
 
-Needs Angular 20, 21 or 22 (`@angular/core` and `@angular/common`).
+Needs Angular 21 or 22 (`@angular/core` and `@angular/common`). The package is built and tested with Angular 21.
 
 ### Load the font
 

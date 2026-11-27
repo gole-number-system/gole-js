@@ -1,7 +1,6 @@
 import { Text, isVNode, type Directive, type DirectiveBinding, type VNode } from "vue";
 import { goleHTML, type GoleBuild, type GoleOptions, type GoleValue } from "@gole-number-system/gole-core";
 import type { GoleConfig } from "./config";
-import { splitSpace } from "./render";
 
 /** What `v-gole` accepts: nothing, a value, or options with an optional `value`. */
 export type GoleDirectiveValue = GoleValue | (GoleOptions & { value?: GoleValue }) | null | undefined;
@@ -51,14 +50,12 @@ export function createGoleDirective(defaults: GoleConfig = {}): GoleDirective {
       value != null
         ? String(value)
         : (vnodeText(vnode) ?? (last && el.innerHTML === last.dom ? last.source : (el.textContent ?? "")));
-    const [before, body, after] = splitSpace(source);
-    const converted = goleHTML(body, {
+    const html = goleHTML(source, {
       decimalSeparator: defaults.decimalSeparator,
       grouping: defaults.grouping,
       ...options,
       build,
     });
-    const html = before + converted + after;
     if (!last || html !== last.html || el.innerHTML !== last.dom) el.innerHTML = html;
     rendered.set(el, { source, html, dom: el.innerHTML });
   };

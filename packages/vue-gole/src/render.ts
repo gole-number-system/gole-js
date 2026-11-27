@@ -37,13 +37,3 @@ export function renderLabelled(segments: GoleSegment[]): VNodeChild[] {
 export function renderNumber(tag: string, label: string, segments: GoleSegment[]) {
   return h(tag, { class: "gole-number", role: "img", "aria-label": label, "data-value": label }, renderFlat(segments));
 }
-
-/**
- * Core reads a string that holds one number and nothing else as that number and drops the
- * spaces around it. Running text needs them, so they are split off first: `[before, text, after]`.
- */
-export function splitSpace(text: string): [string, string, string] {
-  const body = text.trim();
-  const start = text.indexOf(body);
-  return [text.slice(0, start), body, text.slice(start + body.length)];
-}

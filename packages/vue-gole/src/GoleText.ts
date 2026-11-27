@@ -1,16 +1,13 @@
 import { Comment, Fragment, Text, defineComponent, h, isVNode, type PropType, type VNode, type VNodeChild } from "vue";
 import { goleSegments, type GoleOptions } from "@gole-number-system/gole-core";
 import { useGoleOptions } from "./config";
-import { buildProp, renderLabelled, splitSpace, tagProps } from "./render";
+import { buildProp, renderLabelled, tagProps } from "./render";
 
 function convert(children: VNodeChild[], options: GoleOptions): VNodeChild[] {
   const out: VNodeChild[] = [];
   let text = "";
   const flush = () => {
-    if (text) {
-      const [before, body, after] = splitSpace(text);
-      out.push(before, ...renderLabelled(goleSegments(body, options)), after);
-    }
+    if (text) out.push(...renderLabelled(goleSegments(text, options)));
     text = "";
   };
   // Neighbouring pieces of text are joined first, so a number split over two nodes converts as one.
