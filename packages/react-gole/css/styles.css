@@ -1,0 +1,4 @@
+/* @gole-number-system/react-gole with the Ligature build of GoleStandard (recommended).
+ * Import once at the root of your app. Import styles-pua.css instead for the PUA build. */
+@import "@gole-number-system/gole-core/gole.css";
+@import "./components.css";

@@ -1,0 +1,28 @@
+{
+  "name": "gole-js",
+  "version": "1.0.0",
+  "private": true,
+  "description": "JavaScript packages for the Gole Number System (base 100).",
+  "license": "MIT",
+  "author": "eSetu Solutions Pvt Ltd (https://www.esetu.in/)",
+  "homepage": "https://github.com/gole-number-system/gole-js#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gole-number-system/gole-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gole-number-system/gole-js/issues"
+  },
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "examples"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "npm run build && npm test --workspaces --if-present",
+    "typecheck": "npm run build && npm run typecheck --workspaces --if-present",
+    "examples": "npm run build && npm run dev -w @gole-number-system/gole-number-system-examples",
+    "examples:build": "npm run build && npm run build -w @gole-number-system/gole-number-system-examples"
+  }
+}

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gole without a framework</title>
+  </head>
+  <body>
+    <main class="page">
+      <p class="eyebrow"><a href="./index.html">← React examples</a></p>
+      <h1>Gole without a framework</h1>
+      <p class="lede">
+        The first sections use only <code>@gole-number-system/gole-core</code>. Mark an element with
+        <code>data-gole</code> and call <code>renderGole()</code>; the script pads the digits and wraps them in the
+        Gole font.
+      </p>
+
+      <section class="card">
+        <h2>Marked-up HTML</h2>
+        <table class="grid">
+          <thead>
+            <tr><th>Markup</th><th>Result</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>&lt;span data-gole&gt;123&lt;/span&gt;</code></td><td class="big"><span data-gole>123</span></td></tr>
+            <tr><td><code>&lt;span data-gole&gt;12.5&lt;/span&gt;</code></td><td class="big"><span data-gole>12.5</span></td></tr>
+            <tr>
+              <td><code>&lt;span data-gole data-gole-decimals="2"&gt;12747.2&lt;/span&gt;</code></td>
+              <td class="big"><span data-gole data-gole-decimals="2">12747.2</span></td>
+            </tr>
+            <tr>
+              <td><code>&lt;span data-gole&gt;Due 20/11/2026 at 9:05&lt;/span&gt;</code></td>
+              <td class="big"><span data-gole>Due 20/11/2026 at 9:05</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="card">
+        <h2>Live counter</h2>
+        <p>
+          The script sets <code>data-gole-value</code> once a second and calls <code>renderGole()</code> again.
+        </p>
+        <p class="hero"><span id="counter" data-gole data-gole-min-pairs="3">0</span></p>
+      </section>
+
+      <section class="card">
+        <h2>Web components</h2>
+        <p>
+          <code>@gole-number-system/gole-elements</code> adds four custom elements. They need no script of your own
+          and work inside any framework.
+        </p>
+        <table class="grid">
+          <thead>
+            <tr><th>Markup</th><th>Result</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>&lt;gole-number value=&quot;123&quot;&gt;&lt;/gole-number&gt;</code></td><td class="big"><gole-number value="123"></gole-number></td></tr>
+            <tr><td><code>&lt;gole-number value=&quot;1234.5&quot; format=&quot;currency&quot; currency=&quot;INR&quot; locale=&quot;en-IN&quot;&gt;&lt;/gole-number&gt;</code></td><td class="big"><gole-number value="1234.5" format="currency" currency="INR" locale="en-IN"></gole-number></td></tr>
+            <tr><td><code>&lt;gole-number value=&quot;0.456&quot; format=&quot;percent&quot;&gt;&lt;/gole-number&gt;</code></td><td class="big"><gole-number value="0.456" format="percent"></gole-number></td></tr>
+            <tr><td><code>&lt;gole-text&gt;Invoice 5055-002347, 3 items&lt;/gole-text&gt;</code></td><td class="big"><gole-text>Invoice 5055-002347, 3 items</gole-text></td></tr>
+            <tr><td><code>&lt;gole-date value=&quot;2026-11-20&quot;&gt;&lt;/gole-date&gt;</code></td><td class="big"><gole-date value="2026-11-20"></gole-date></td></tr>
+            <tr><td><code>&lt;gole-time&gt;&lt;/gole-time&gt;</code></td><td class="big"><gole-time></gole-time></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="card">
+        <h2>Strings from <code>toGole()</code></h2>
+        <p>For templates, exports and anywhere else you build text yourself.</p>
+        <pre id="strings"></pre>
+      </section>
+    </main>
+    <script type="module" src="/src/vanilla.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,3 @@
+/* @gole-number-system/svelte-gole with the PUA build of GoleStandard.
+ * Import once at the root of your app, and call setGoleContext({ build: "pua" }) in your root layout. */
+@import "@gole-number-system/gole-core/gole-pua.css";

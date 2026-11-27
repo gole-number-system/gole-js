@@ -1,0 +1,136 @@
+{
+  "name": "@gole-number-system/gole-adapters",
+  "version": "1.0.0",
+  "description": "Small adapters that make Chart.js, Apache ECharts, AG Grid and TanStack Table show numbers in the Gole Number System (base 100).",
+  "license": "MIT",
+  "author": "eSetu Solutions Pvt Ltd (https://www.esetu.in/)",
+  "contributors": [
+    "Revelly Ravi"
+  ],
+  "homepage": "https://github.com/gole-number-system/gole-js/tree/main/packages/gole-adapters#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gole-number-system/gole-js.git",
+    "directory": "packages/gole-adapters"
+  },
+  "bugs": {
+    "url": "https://github.com/gole-number-system/gole-js/issues"
+  },
+  "keywords": [
+    "gole",
+    "gole-number-system",
+    "base-100",
+    "numerals",
+    "chartjs",
+    "echarts",
+    "ag-grid",
+    "tanstack-table",
+    "esetu"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./chartjs": {
+      "import": {
+        "types": "./dist/chartjs.d.ts",
+        "default": "./dist/chartjs.js"
+      },
+      "require": {
+        "types": "./dist/chartjs.d.cts",
+        "default": "./dist/chartjs.cjs"
+      }
+    },
+    "./echarts": {
+      "import": {
+        "types": "./dist/echarts.d.ts",
+        "default": "./dist/echarts.js"
+      },
+      "require": {
+        "types": "./dist/echarts.d.cts",
+        "default": "./dist/echarts.cjs"
+      }
+    },
+    "./ag-grid": {
+      "import": {
+        "types": "./dist/ag-grid.d.ts",
+        "default": "./dist/ag-grid.js"
+      },
+      "require": {
+        "types": "./dist/ag-grid.d.cts",
+        "default": "./dist/ag-grid.cjs"
+      }
+    },
+    "./tanstack-table": {
+      "import": {
+        "types": "./dist/tanstack-table.d.ts",
+        "default": "./dist/tanstack-table.js"
+      },
+      "require": {
+        "types": "./dist/tanstack-table.d.cts",
+        "default": "./dist/tanstack-table.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node -e \"fs.rmSync('dist',{recursive:true,force:true})\" && tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "dependencies": {
+    "@gole-number-system/gole-core": "^1.0.0"
+  },
+  "peerDependencies": {
+    "@tanstack/table-core": "^8.0.0",
+    "ag-grid-community": ">=33.0.0",
+    "chart.js": "^4.0.0",
+    "echarts": "^5.0.0 || ^6.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@tanstack/table-core": {
+      "optional": true
+    },
+    "ag-grid-community": {
+      "optional": true
+    },
+    "chart.js": {
+      "optional": true
+    },
+    "echarts": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@tanstack/table-core": "^8.21.3",
+    "ag-grid-community": "^36.3.0",
+    "chart.js": "^4.6.2",
+    "echarts": "^6.1.0",
+    "jsdom": "^29.1.1",
+    "tsup": "^9.0.0",
+    "typescript": "^6.0.3",
+    "vitest": "^5.1.2"
+  }
+}

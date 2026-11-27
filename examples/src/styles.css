@@ -1,0 +1,275 @@
+/* Page styles for the examples. Nothing here is needed to render Gole numbers:
+ * the font and the .gole classes come from the package stylesheets. */
+:root {
+  --bg: #f9f9f7;
+  --surface: #fcfcfb;
+  --text: #0b0b0b;
+  --muted: #52514e;
+  --line: #e4e3de;
+  --accent: #1c5cab;
+  --series-1: #2a78d6;
+  --series-2: #eb6834;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d0d0d;
+    --surface: #1a1a19;
+    --text: #f0efec;
+    --muted: #c3c2b7;
+    --line: #33332f;
+    --accent: #86b6ef;
+    --series-1: #3987e5;
+    --series-2: #d95926;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+.page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 48px 16px 72px;
+}
+a {
+  color: var(--accent);
+}
+code,
+pre,
+.mono {
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+}
+code {
+  font-size: 0.86em;
+}
+pre {
+  margin: 0;
+  overflow-x: auto;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.eyebrow {
+  margin: 0 0 6px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+h1 {
+  margin: 0 0 10px;
+  font-size: clamp(30px, 6vw, 42px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+h2 {
+  margin: 0 0 2px;
+  font-size: 21px;
+}
+h3 {
+  margin: 28px 0 10px;
+  font-size: 15px;
+}
+.lede {
+  max-width: 62ch;
+  margin: 0 0 20px;
+  color: var(--muted);
+}
+.note {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 14.5px;
+}
+.toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin-bottom: 28px;
+  font-size: 14.5px;
+}
+.card {
+  margin-top: 20px;
+  padding: 22px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow-x: auto;
+}
+
+.grid {
+  width: 100%;
+  border-collapse: collapse;
+}
+.grid th,
+.grid td {
+  padding: 9px 10px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: middle;
+}
+.grid th {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+}
+.grid .num {
+  text-align: right;
+}
+.grid tfoot td {
+  color: var(--muted);
+}
+.grid .total td {
+  border-bottom: 0;
+  color: var(--text);
+  font-weight: 650;
+  font-size: 18px;
+}
+.big {
+  font-size: 24px;
+}
+.hero {
+  margin: 0;
+  font-size: 56px;
+  line-height: 1.2;
+}
+
+.field {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+.field > span {
+  font-size: 13px;
+  color: var(--muted);
+}
+.field .gole-input {
+  --gole-input-preview-size: 30px;
+  flex-wrap: wrap;
+}
+.input-only .gole-input-preview {
+  display: none;
+}
+.input {
+  flex: 1 1 240px;
+  min-width: 0;
+  max-width: 420px;
+  padding: 10px 12px;
+  font: 600 19px ui-monospace, Menlo, Consolas, monospace;
+  color: inherit;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+.pairs {
+  margin-bottom: 12px;
+  font-size: 17px;
+  --gole-pair-pad-border: var(--series-2);
+}
+
+.symbols {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  gap: 4px;
+  min-width: 420px;
+}
+.symbol {
+  display: grid;
+  justify-items: center;
+  padding: 6px 0 4px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 26px;
+  line-height: 1.2;
+}
+.symbol small {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.two-up {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 16px;
+}
+.ship-label {
+  padding: 12px 14px;
+  border: 2px solid var(--text);
+  border-radius: 6px;
+}
+.ship-label header,
+.ship-label footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.ship-number {
+  display: grid;
+  place-items: center;
+  min-height: 2.6em;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+}
+.ship-number .mono {
+  overflow-wrap: anywhere;
+}
+
+.invoice-head,
+.board-clock {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 0 0 8px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.board-clock {
+  justify-content: flex-start;
+  gap: 12px;
+  font-size: 30px;
+}
+.board-clock > span:first-child {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.charts {
+  display: grid;
+  gap: 28px;
+}
+.charts figure {
+  margin: 0;
+  min-width: 420px;
+}
+.charts figcaption {
+  margin-bottom: 8px;
+  font-size: 14.5px;
+  font-weight: 600;
+}
+.recharts-default-tooltip {
+  background: var(--surface) !important;
+  border-color: var(--line) !important;
+  border-radius: 8px;
+  font-size: 18px;
+}
+.recharts-tooltip-item {
+  color: var(--text) !important;
+}
+.recharts-legend-item-text {
+  color: var(--text) !important;
+  font-size: 17px;
+}

@@ -1,0 +1,66 @@
+{
+  "name": "@gole-number-system/angular-gole",
+  "version": "1.0.0",
+  "description": "Angular pipes and directives that show numbers in the Gole Number System (base 100). Standalone, built on gole-core.",
+  "license": "MIT",
+  "author": "eSetu Solutions Pvt Ltd (https://www.esetu.in/)",
+  "contributors": [
+    "Revelly Ravi"
+  ],
+  "homepage": "https://github.com/gole-number-system/gole-js/tree/main/packages/angular-gole#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gole-number-system/gole-js.git",
+    "directory": "packages/angular-gole"
+  },
+  "bugs": {
+    "url": "https://github.com/gole-number-system/gole-js/issues"
+  },
+  "keywords": [
+    "gole",
+    "gole-number-system",
+    "base-100",
+    "numerals",
+    "angular",
+    "angular-library",
+    "esetu"
+  ],
+  "type": "module",
+  "main": "./dist/fesm2022/gole-number-system-angular-gole.mjs",
+  "types": "./dist/types/gole-number-system-angular-gole.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "ng-packagr -p ng-package.json -c tsconfig.lib.json && node scripts/finish-dist.mjs",
+    "test": "vitest run",
+    "typecheck": "ngc -p tsconfig.json --noEmit",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build",
+    "release": "npm run prepublishOnly && npm publish ./dist"
+  },
+  "dependencies": {
+    "@gole-number-system/gole-core": "^1.0.0"
+  },
+  "peerDependencies": {
+    "@angular/common": "^20.0.0 || ^21.0.0 || ^22.0.0",
+    "@angular/core": "^20.0.0 || ^21.0.0 || ^22.0.0"
+  },
+  "devDependencies": {
+    "@angular/common": "^22.3.0",
+    "@angular/compiler": "^22.3.0",
+    "@angular/compiler-cli": "^22.3.0",
+    "@angular/core": "^22.3.0",
+    "@angular/platform-browser": "^22.3.0",
+    "jsdom": "^29.1.1",
+    "ng-packagr": "^22.3.0",
+    "rxjs": "^7.8.0",
+    "typescript": "^6.0.3",
+    "vitest": "^5.1.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

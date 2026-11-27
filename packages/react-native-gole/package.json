@@ -1,0 +1,81 @@
+{
+  "name": "@gole-number-system/react-native-gole",
+  "version": "1.0.0",
+  "description": "React Native components that show numbers in the Gole Number System (base 100) with the GoleStandard font. Works with bare React Native and Expo.",
+  "license": "MIT",
+  "author": "eSetu Solutions Pvt Ltd (https://www.esetu.in/)",
+  "contributors": [
+    "Revelly Ravi"
+  ],
+  "homepage": "https://github.com/gole-number-system/gole-js/tree/main/packages/react-native-gole#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gole-number-system/gole-js.git",
+    "directory": "packages/react-native-gole"
+  },
+  "bugs": {
+    "url": "https://github.com/gole-number-system/gole-js/issues"
+  },
+  "keywords": [
+    "gole",
+    "gole-number-system",
+    "base-100",
+    "numerals",
+    "react-native",
+    "expo",
+    "ios",
+    "android",
+    "esetu"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "react-native": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "react-native": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./fonts": {
+      "types": "./fonts/index.d.ts",
+      "default": "./fonts/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "fonts",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node -e \"fs.rmSync('dist',{recursive:true,force:true})\" && tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "dependencies": {
+    "@esetu-solutions/gole-number-system-fonts": "^1.0.0",
+    "@gole-number-system/gole-core": "^1.0.0"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-native": ">=0.72.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

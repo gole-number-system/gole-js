@@ -1,0 +1,48 @@
+MIT License
+
+Copyright (c) 2026 eSetu Solutions Pvt Ltd (https://www.esetu.in/)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+SCOPE OF THIS LICENCE
+
+The MIT licence above covers the source code in this repository only.
+
+It does not cover, and grants no rights in:
+
+- the GoleStandard fonts, distributed separately as
+  @esetu-solutions/gole-number-system-fonts;
+- the Gole Number System itself, its glyph designs, the Gole symbol artwork
+  or the Gole Specification;
+- any patent, including Indian Patent Application No. 202441034973 and any
+  patent granted on it or corresponding to it. No patent licence, express or
+  implied, is granted by this file.
+
+Those are licensed by eSetu Solutions Pvt Ltd under the Gole Number System
+Community Licence v1.0: https://www.esetu.in/gole-number-system/licence
+
+In short: free for non-commercial use, and free for commercial use while
+your organisation's annual turnover is below Rs 10 crore. Commercial use at
+or above that turnover, work done for such an organisation, and any
+government or public sector deployment need a written licence from eSetu
+(legal@esetu.in).
+
+"Gole Number System" and "eSetu" are trademarks of eSetu Solutions Pvt Ltd.

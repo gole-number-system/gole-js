@@ -1,0 +1,10 @@
+/* PUA build of the GoleStandard font plus the classes the elements use.
+ * Load either this file or gole.css, never both. Set build="pua" on the elements
+ * or call setGoleElementDefaults({ build: "pua" }). */
+@import "@gole-number-system/gole-core/gole-pua.css";
+
+gole-number,
+gole-date,
+gole-time {
+  white-space: nowrap;
+}

@@ -1,0 +1,4 @@
+/* @gole-number-system/react-gole with the PUA build of GoleStandard.
+ * Import once at the root of your app, and set <GoleProvider build="pua">. */
+@import "@gole-number-system/gole-core/gole-pua.css";
+@import "./components.css";

@@ -1,0 +1,14 @@
+/* Gole Number System: PUA build of the GoleStandard font plus the classes used by
+ * goleHTML(), renderGole() and @gole-number-system/react-gole.
+ * Load either this file or gole.css, never both: the two builds share one family name. */
+@import "@esetu-solutions/gole-number-system-fonts/fonts/PUA/GoleStandard_PUA.css";
+
+/* Digits only. Decimal points, signs and units stay outside and keep the page font. */
+.gole {
+  font-family: "GoleStandard";
+}
+
+/* One whole number: never break a line inside it. */
+.gole-number {
+  white-space: nowrap;
+}

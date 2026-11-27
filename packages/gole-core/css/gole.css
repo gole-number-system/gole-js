@@ -1,0 +1,16 @@
+/* Gole Number System: Ligature build of the GoleStandard font plus the classes used by
+ * goleHTML(), renderGole() and @gole-number-system/react-gole.
+ * Load either this file or gole-pua.css, never both: the two builds share one family name. */
+@import "@esetu-solutions/gole-number-system-fonts/fonts/Ligature/GoleStandard.css";
+
+/* Digits only. Decimal points, signs and units stay outside and keep the page font. */
+.gole {
+  font-family: "GoleStandard";
+  font-variant-ligatures: common-ligatures;
+  letter-spacing: normal;
+}
+
+/* One whole number: never break a line inside it. */
+.gole-number {
+  white-space: nowrap;
+}

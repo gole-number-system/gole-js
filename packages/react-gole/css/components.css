@@ -1,0 +1,53 @@
+/* Layout for <GolePairs> and <GoleInput>. Colours and sizes come from custom properties,
+ * so they follow the page: override --gole-* on any ancestor. No font is loaded here. */
+
+.gole-pairs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: var(--gole-pairs-gap, 0.4em);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gole-pair {
+  display: inline-grid;
+  justify-items: center;
+  min-width: 2.6em;
+  padding: 0.3em 0.45em;
+  border: 1px solid var(--gole-pair-border, color-mix(in srgb, currentColor 22%, transparent));
+  border-radius: 0.5em;
+}
+
+.gole-pair > .gole {
+  font-size: var(--gole-pair-symbol-size, 1.8em);
+  line-height: 1.15;
+}
+
+.gole-pair-digits {
+  font-size: 0.75em;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.7;
+}
+
+/* The pair that holds the padding zero. */
+.gole-pair[data-pad] {
+  border-style: dashed;
+  border-color: var(--gole-pair-pad-border, currentColor);
+}
+
+.gole-pair-text {
+  align-self: center;
+  white-space: pre;
+}
+
+.gole-input {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gole-input-gap, 0.6em);
+}
+
+.gole-input-preview {
+  font-size: var(--gole-input-preview-size, 1.25em);
+}

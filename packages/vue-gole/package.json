@@ -1,0 +1,83 @@
+{
+  "name": "@gole-number-system/vue-gole",
+  "version": "1.0.0",
+  "description": "Vue 3 components, a directive and composables that display numbers in the Gole Number System (base 100) with the GoleStandard fonts.",
+  "license": "MIT",
+  "author": "eSetu Solutions Pvt Ltd (https://www.esetu.in/)",
+  "contributors": [
+    "Revelly Ravi"
+  ],
+  "homepage": "https://github.com/gole-number-system/gole-js/tree/main/packages/vue-gole#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gole-number-system/gole-js.git",
+    "directory": "packages/vue-gole"
+  },
+  "bugs": {
+    "url": "https://github.com/gole-number-system/gole-js/issues"
+  },
+  "keywords": [
+    "gole",
+    "gole-number-system",
+    "base-100",
+    "numerals",
+    "vue",
+    "vue3",
+    "vue-component",
+    "vue-directive",
+    "esetu"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "style": "./css/styles.css",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./styles.css": "./css/styles.css",
+    "./styles-pua.css": "./css/styles-pua.css",
+    "./package.json": "./package.json"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "files": [
+    "dist",
+    "css",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node -e \"fs.rmSync('dist',{recursive:true,force:true})\" && tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "dependencies": {
+    "@gole-number-system/gole-core": "^1.0.0"
+  },
+  "peerDependencies": {
+    "vue": "^3.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@vue/test-utils": "^2.6.0",
+    "jsdom": "^29.1.1",
+    "tsup": "^9.0.0",
+    "typescript": "^6.0.3",
+    "vitest": "^5.1.2",
+    "vue": "^3.5.46"
+  }
+}

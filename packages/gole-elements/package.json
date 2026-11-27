@@ -1,0 +1,88 @@
+{
+  "name": "@gole-number-system/gole-elements",
+  "version": "1.0.0",
+  "description": "Web components that show numbers in the Gole Number System (base 100): <gole-number>, <gole-text>, <gole-date> and <gole-time>. Works in plain HTML, Angular, Vue, Svelte and any other framework.",
+  "license": "MIT",
+  "author": "eSetu Solutions Pvt Ltd (https://www.esetu.in/)",
+  "contributors": [
+    "Revelly Ravi"
+  ],
+  "homepage": "https://github.com/gole-number-system/gole-js/tree/main/packages/gole-elements#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gole-number-system/gole-js.git",
+    "directory": "packages/gole-elements"
+  },
+  "bugs": {
+    "url": "https://github.com/gole-number-system/gole-js/issues"
+  },
+  "keywords": [
+    "gole",
+    "gole-number-system",
+    "base-100",
+    "numerals",
+    "web-components",
+    "custom-elements",
+    "esetu"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "unpkg": "./dist/define.global.js",
+  "jsdelivr": "./dist/define.global.js",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./define": {
+      "import": {
+        "types": "./dist/define.d.ts",
+        "default": "./dist/define.js"
+      },
+      "require": {
+        "types": "./dist/define.d.cts",
+        "default": "./dist/define.cjs"
+      }
+    },
+    "./gole.css": "./css/gole.css",
+    "./gole-pua.css": "./css/gole-pua.css",
+    "./package.json": "./package.json"
+  },
+  "sideEffects": [
+    "*.css",
+    "./dist/define.*"
+  ],
+  "files": [
+    "dist",
+    "css",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node -e \"fs.rmSync('dist',{recursive:true,force:true})\" && tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "dependencies": {
+    "@gole-number-system/gole-core": "^1.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "jsdom": "^29.1.1",
+    "tsup": "^9.0.0",
+    "typescript": "^6.0.3",
+    "vitest": "^5.1.2"
+  }
+}

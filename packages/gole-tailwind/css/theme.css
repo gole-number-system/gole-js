@@ -1,0 +1,27 @@
+/* Gole Number System for Tailwind CSS v4: Ligature build of the GoleStandard font, the
+ * font-gole utility and the classes used by gole-core, react-gole and gole-elements.
+ *
+ *   @import "tailwindcss";
+ *   @import "@gole-number-system/gole-tailwind";
+ *
+ * Load either this file or pua.css, never both: the two builds share one family name. */
+@import "@esetu-solutions/gole-number-system-fonts/ligature.css";
+
+/* font-gole: the Gole font on text that is already padded digits. */
+@theme {
+  --font-gole: "GoleStandard";
+}
+
+@layer components {
+  /* Digits only. Decimal points, signs and units stay outside and keep the page font. */
+  .gole {
+    font-family: var(--font-gole);
+    font-variant-ligatures: common-ligatures;
+    letter-spacing: normal;
+  }
+
+  /* One whole number: never break a line inside it. */
+  .gole-number {
+    white-space: nowrap;
+  }
+}

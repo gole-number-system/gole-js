@@ -1,0 +1,39 @@
+{
+  "name": "@gole-number-system/gole-number-system-examples",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Worked examples of showing Gole Number System (base 100) numbers: plain JavaScript, React components and charts.",
+  "license": "MIT",
+  "author": "eSetu Solutions Pvt Ltd (https://www.esetu.in/)",
+  "homepage": "https://github.com/gole-number-system/gole-js/tree/main/examples#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gole-number-system/gole-js.git",
+    "directory": "examples"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@esetu-solutions/gole-number-system-fonts": "^1.0.0",
+    "@gole-number-system/gole-core": "^1.0.0",
+    "@gole-number-system/gole-elements": "^1.0.0",
+    "@gole-number-system/react-gole": "^1.0.0",
+    "@gole-number-system/react-gole-charts": "^1.0.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "recharts": "^3.11.2"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.11",
+    "@types/react": "^19.3.3",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "typescript": "^6.0.3",
+    "vite": "^8.4.0"
+  }
+}

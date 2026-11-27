@@ -1,0 +1,25 @@
+/* Gole Number System for Tailwind CSS v4: PUA build of the GoleStandard font, the
+ * font-gole utility and the classes used by gole-core, react-gole and gole-elements.
+ *
+ *   @import "tailwindcss";
+ *   @import "@gole-number-system/gole-tailwind/pua.css";
+ *
+ * Load either this file or theme.css, never both: the two builds share one family name. */
+@import "@esetu-solutions/gole-number-system-fonts/pua.css";
+
+/* font-gole: the Gole font on text that is already PUA characters (U+E441 + pair). */
+@theme {
+  --font-gole: "GoleStandard";
+}
+
+@layer components {
+  /* Gole characters only. Decimal points, signs and units stay outside and keep the page font. */
+  .gole {
+    font-family: var(--font-gole);
+  }
+
+  /* One whole number: never break a line inside it. */
+  .gole-number {
+    white-space: nowrap;
+  }
+}
